@@ -1,17 +1,18 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:ecomm/features/cart/bloc/cart_bloc.dart';
+import 'package:ecomm/features/wishlist/bloc/wishlist_bloc.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecomm/features/home/bloc/home_bloc.dart';
 import 'package:ecomm/features/home/models/home_product_data_model.dart';
 
-class CartTileWidget extends StatelessWidget {
+class WishlistTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;
-  final CartBloc cartBloc;
-  const CartTileWidget({
+  final WishlistBloc wishlistBloc;
+  const WishlistTileWidget({
     Key? key,
     required this.productDataModel,
-    required this.cartBloc,
+    required this.wishlistBloc,
   }) : super(key: key);
 
   @override
@@ -74,7 +75,7 @@ class CartTileWidget extends StatelessWidget {
                   IconButton(
                       color: Colors.red,
                       onPressed: () {
-                        cartBloc.add(CartRemoveFromCartEvent(
+                        wishlistBloc.add(WishlistRemoveFromCartEvent(
                             productDataModel: productDataModel));
                       },
                       icon: Icon(Icons.delete_outline))
